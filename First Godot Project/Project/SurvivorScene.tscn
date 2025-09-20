@@ -91,6 +91,7 @@ position = Vector2(222, 271)
 position = Vector2(138, 275)
 
 [node name="MobTimer" type="Timer" parent="."]
+unique_name_in_owner = true
 wait_time = 0.343
 autostart = true
 

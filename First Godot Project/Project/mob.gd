@@ -8,6 +8,8 @@ var knockbackElapsed = 0.0
 
 @onready var player = get_node("/root/Game/Player")
 
+signal dead
+
 func _physics_process(delta: float) -> void:
 	#If there is knockback
 	if(isKnockback):
@@ -35,11 +37,14 @@ func take_damage():
 	
 	
 	if health == 0:
+		emit_signal("dead")
+		remove_from_group("enemies")
 		queue_free()
 		const SMOKESCENE = preload("res://smoke_explosion/smoke_explosion.tscn")
 		var smoke = SMOKESCENE.instantiate()
 		get_parent().add_child(smoke)
 		smoke.global_position = global_position
+		
 	else:
 		isKnockback = true
 		
