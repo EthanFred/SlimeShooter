@@ -8,3 +8,5 @@ res://Bullet.tscn
 res://bullet.gd
 res://gun.gd
 res://gun.tscn
+res://coin.tscn
+res://coin.gd

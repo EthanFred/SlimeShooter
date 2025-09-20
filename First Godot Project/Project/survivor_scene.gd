@@ -1,6 +1,6 @@
 extends Node2D
 
-var coins = 10;
+
 var mobsToSpawn = 1
 var mobsToKill = 1
 var wave = 0
@@ -43,7 +43,7 @@ func end_wave():
 		
 		get_tree().paused = true
 		%PowerUpScreen.visible = true;
-		%CoinText.text = "Coins: %d" % coins
+		%CoinText.text = "Coins: %d" % %Player.coins
 		
 	
 	
@@ -64,29 +64,29 @@ func begin_wave():
 
 func _on_add_health_pressed() -> void:
 	print("Health Pressed")
-	if coins >= healthCost:
+	if %Player.coins >= healthCost:
 		%Player.maxHealth *= 1.01
-		coins -= healthCost
+		%Player.coins -= healthCost
 		healthCost *= 2
-		$PowerUpScreen/StartNextWave/CoinText.text = "Coins: %d" % coins
+		$PowerUpScreen/StartNextWave/CoinText.text = "Coins: %d" % %Player.coins
 		
 	
 
 
 func _on_add_strength_pressed() -> void:
-	if coins >= strengthCost:
+	if %Player.coins >= strengthCost:
 		%Player.strength *= 1.1
-		coins -= strengthCost
+		%Player.coins -= strengthCost
 		strengthCost *= 2
-		$PowerUpScreen/StartNextWave/CoinText.text = "Coins: %d" % coins
+		$PowerUpScreen/StartNextWave/CoinText.text = "Coins: %d" % %Player.coins
 
 
 func _on_add_speed_pressed() -> void:
-	if coins >= speedCost:
+	if %Player.coins >= speedCost:
 		%Player.speed *= 1.01
-		coins -= speedCost
+		%Player.coins -= speedCost
 		speedCost *= 2
-		$PowerUpScreen/StartNextWave/CoinText.text = "Coins: %d" % coins
+		$PowerUpScreen/StartNextWave/CoinText.text = "Coins: %d" % %Player.coins
 
 
 func _on_start_next_wave_pressed() -> void:

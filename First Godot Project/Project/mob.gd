@@ -37,6 +37,15 @@ func take_damage(strength):
 	
 	
 	if health <= 0:
+		const COIN = preload("res://Coin.tscn")
+		
+		var newCoin = COIN.instantiate()
+		
+		newCoin.global_position = global_position
+		newCoin.global_rotation = global_rotation
+		get_tree().current_scene.add_child(newCoin)  # or another parent node
+		
+		
 		emit_signal("dead")
 		remove_from_group("enemies")
 		queue_free()

@@ -7,9 +7,11 @@ var health = 100.0
 var maxHealth = 100.0
 var speed = 1.0
 var strength = 10.0
+var coins = 10;
 
 
-	  # give the bullet a reference to the player
+func _ready():
+	add_to_group("player")
 	
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
