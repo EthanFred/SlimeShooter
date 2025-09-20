@@ -1,12 +1,6 @@
 res://SurvivorScene.tscn
-res://survivor_scene.gd
-res://mob.tscn
-res://mob.gd
-res://player.tscn
-res://player.gd
-res://Bullet.tscn
 res://bullet.gd
-res://gun.gd
-res://gun.tscn
 res://coin.tscn
-res://coin.gd
+res://Bullet.tscn
+res://player.tscn
+res://mob.tscn
