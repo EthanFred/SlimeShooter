@@ -1,8 +1,47 @@
-[gd_scene load_steps=5 format=3 uid="uid://1aiep5u7l72k"]
+[gd_scene load_steps=18 format=3 uid="uid://1aiep5u7l72k"]
 
 [ext_resource type="PackedScene" uid="uid://cgf7ajh6lm83q" path="res://player.tscn" id="1_86hab"]
 [ext_resource type="Script" uid="uid://buh53vkrtg7qo" path="res://survivor_scene.gd" id="1_psiso"]
 [ext_resource type="PackedScene" uid="uid://m7xdvpd5un70" path="res://tree.tscn" id="2_kpcd6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e24ar"]
+bg_color = Color(1, 0.578369, 0.516824, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7djm5"]
+bg_color = Color(0.378232, 7.09929e-07, 2.16588e-07, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lmewu"]
+bg_color = Color(0.536592, 1.51612e-06, 2.88785e-07, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pqj7k"]
+bg_color = Color(0.283365, 0.498344, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yaitk"]
+bg_color = Color(1.49205e-06, 0, 0.520981, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2f1cn"]
+bg_color = Color(1.92523e-06, 0, 0.637148, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a757t"]
+bg_color = Color(4.52429e-06, 0.638954, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_haarb"]
+bg_color = Color(2.21101e-07, 0.152649, 2.40654e-08, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_psiso"]
+bg_color = Color(2.03352e-06, 0.314457, 1.44392e-07, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2u7ng"]
+bg_color = Color(1.3236e-07, 0.203088, 0.259782, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u1kpk"]
+bg_color = Color(0.98803, 0.355922, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gt6j7"]
+bg_color = Color(0.316503, 6.78403e-05, 0.316501, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sv4or"]
+bg_color = Color(0.491325, 0.000170768, 0.491322, 1)
 
 [sub_resource type="Curve2D" id="Curve2D_kpcd6"]
 _data = {
@@ -13,6 +52,83 @@ point_count = 5
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_psiso")
+
+[node name="PowerUp Screen" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="PowerUp Screen"]
+offset_right = 1942.0
+offset_bottom = 1097.0
+color = Color(0, 0, 0, 0.533333)
+
+[node name="Powerups" type="VBoxContainer" parent="PowerUp Screen"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -545.0
+offset_right = 807.0
+offset_bottom = 545.0
+grow_vertical = 2
+theme_override_constants/separation = 200
+alignment = 1
+
+[node name="Add Health" type="Button" parent="PowerUp Screen/Powerups"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = SubResource("StyleBoxFlat_e24ar")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7djm5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lmewu")
+text = "Add Health"
+
+[node name="Add Strength" type="Button" parent="PowerUp Screen/Powerups"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = SubResource("StyleBoxFlat_pqj7k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yaitk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2f1cn")
+text = "Add Strength"
+
+[node name="Add Speed" type="Button" parent="PowerUp Screen/Powerups"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = SubResource("StyleBoxFlat_a757t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_haarb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_psiso")
+text = "Add Speed"
+
+[node name="StartNextWave" type="VBoxContainer" parent="PowerUp Screen"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -905.0
+offset_top = -547.0
+offset_bottom = 547.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 400
+alignment = 1
+
+[node name="CoinText" type="Label" parent="PowerUp Screen/StartNextWave"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.793909, 0.67547, 1)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_2u7ng")
+text = "COINS: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartNextWave" type="Button" parent="PowerUp Screen/StartNextWave"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+theme_override_styles/hover = SubResource("StyleBoxFlat_u1kpk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gt6j7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_sv4or")
+text = "Start Next Wave"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1

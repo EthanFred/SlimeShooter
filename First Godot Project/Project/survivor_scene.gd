@@ -1,6 +1,6 @@
 extends Node2D
 
-
+var coins = 0;
 var mobsToSpawn = 15
 var mobsToKill = 15
 var wave = 0
@@ -13,8 +13,7 @@ func spawn_mob():
 	new_mob.global_position = %PathFollow2D.global_position
 	add_child(new_mob)
 	
-	#Add mob to group enemies to track how many are alive
-	new_mob.add_to_group("enemies")
+	#If mob dies, call end_wave
 	new_mob.dead.connect(end_wave)
 
 func _on_mob_timer_timeout() -> void:
@@ -40,9 +39,25 @@ func end_wave():
 		
 		wave += 1
 		mobsToSpawn = 15 + (wave * 15)
+		mobsToKill = mobsToSpawn
 		get_tree().paused = true
+		
 	
 	
 func begin_wave():
 	print("Beginning wave")
+	
+
+func buyHealth():
+	coins -= 15
+	%CoinText.text = "Coins: %d" % coins
+	
+func buySpeed():
+	coins -=15
+	%CoinText.text = "Coins: %d" % coins
+	
+func buyStrength():
+	coins -= 15
+	%CoinText.text = "Coins: %d" % coins
+	
 	
