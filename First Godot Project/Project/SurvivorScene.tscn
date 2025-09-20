@@ -53,14 +53,18 @@ point_count = 5
 y_sort_enabled = true
 script = ExtResource("1_psiso")
 
-[node name="PowerUp Screen" type="CanvasLayer" parent="."]
+[node name="PowerUpScreen" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+process_mode = 2
+visible = false
 
-[node name="ColorRect" type="ColorRect" parent="PowerUp Screen"]
+[node name="ColorRect" type="ColorRect" parent="PowerUpScreen"]
 offset_right = 1942.0
 offset_bottom = 1097.0
 color = Color(0, 0, 0, 0.533333)
 
-[node name="Powerups" type="VBoxContainer" parent="PowerUp Screen"]
+[node name="Powerups" type="VBoxContainer" parent="PowerUpScreen"]
+custom_minimum_size = Vector2(200, 200)
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
@@ -71,34 +75,37 @@ grow_vertical = 2
 theme_override_constants/separation = 200
 alignment = 1
 
-[node name="Add Health" type="Button" parent="PowerUp Screen/Powerups"]
+[node name="Add Health" type="Button" parent="PowerUpScreen/Powerups"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 theme_override_styles/hover = SubResource("StyleBoxFlat_e24ar")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_7djm5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_lmewu")
+action_mode = 0
 text = "Add Health"
 
-[node name="Add Strength" type="Button" parent="PowerUp Screen/Powerups"]
+[node name="Add Strength" type="Button" parent="PowerUpScreen/Powerups"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 theme_override_styles/hover = SubResource("StyleBoxFlat_pqj7k")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_yaitk")
 theme_override_styles/normal = SubResource("StyleBoxFlat_2f1cn")
+action_mode = 0
 text = "Add Strength"
 
-[node name="Add Speed" type="Button" parent="PowerUp Screen/Powerups"]
+[node name="Add Speed" type="Button" parent="PowerUpScreen/Powerups"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 theme_override_styles/hover = SubResource("StyleBoxFlat_a757t")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_haarb")
 theme_override_styles/normal = SubResource("StyleBoxFlat_psiso")
+action_mode = 0
 text = "Add Speed"
 
-[node name="StartNextWave" type="VBoxContainer" parent="PowerUp Screen"]
+[node name="StartNextWave" type="VBoxContainer" parent="PowerUpScreen"]
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
@@ -112,7 +119,7 @@ grow_vertical = 2
 theme_override_constants/separation = 400
 alignment = 1
 
-[node name="CoinText" type="Label" parent="PowerUp Screen/StartNextWave"]
+[node name="CoinText" type="Label" parent="PowerUpScreen/StartNextWave"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.793909, 0.67547, 1)
@@ -122,7 +129,7 @@ text = "COINS: "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="StartNextWave" type="Button" parent="PowerUp Screen/StartNextWave"]
+[node name="StartNextWave" type="Button" parent="PowerUpScreen/StartNextWave"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 100
 theme_override_styles/hover = SubResource("StyleBoxFlat_u1kpk")
@@ -138,6 +145,7 @@ offset_right = 1938.0
 offset_bottom = 1096.0
 
 [node name="Player" parent="." instance=ExtResource("1_86hab")]
+unique_name_in_owner = true
 position = Vector2(926, 905)
 
 [node name="Path2D" type="Path2D" parent="Player"]
@@ -241,5 +249,9 @@ text = "GAME OVER"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="pressed" from="PowerUpScreen/Powerups/Add Health" to="." method="_on_add_health_pressed"]
+[connection signal="pressed" from="PowerUpScreen/Powerups/Add Strength" to="." method="_on_add_strength_pressed"]
+[connection signal="pressed" from="PowerUpScreen/Powerups/Add Speed" to="." method="_on_add_speed_pressed"]
+[connection signal="pressed" from="PowerUpScreen/StartNextWave/StartNextWave" to="." method="_on_start_next_wave_pressed"]
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]

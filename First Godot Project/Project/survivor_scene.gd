@@ -1,10 +1,13 @@
 extends Node2D
 
-var coins = 0;
-var mobsToSpawn = 15
-var mobsToKill = 15
+var coins = 10;
+var mobsToSpawn = 1
+var mobsToKill = 1
 var wave = 0
 var enemiesDied = 0
+var strengthCost = 1.0
+var speedCost = 1.0
+var healthCost = 1.0
 
 
 func spawn_mob():
@@ -37,27 +40,54 @@ func end_wave():
 	if enemiesDied == mobsToKill:
 		print ("Ending wave")
 		
-		wave += 1
-		mobsToSpawn = 15 + (wave * 15)
-		mobsToKill = mobsToSpawn
+		
 		get_tree().paused = true
+		%PowerUpScreen.visible = true;
+		%CoinText.text = "Coins: %d" % coins
 		
 	
 	
 func begin_wave():
+	%PowerUpScreen.visible = false;
+	get_tree().paused = false;
+	wave += 1
+	mobsToSpawn = 5*wave
+	mobsToKill = mobsToSpawn
+	enemiesDied = 0
+	%Player.health = %Player.maxHealth
+	if %MobTimer.wait_time > 1:
+		%MobTimer.wait_time-=.01
+	%MobTimer.start()
+	
 	print("Beginning wave")
+
+
+func _on_add_health_pressed() -> void:
+	print("Health Pressed")
+	if coins >= healthCost:
+		%Player.maxHealth *= 1.01
+		coins -= healthCost
+		healthCost *= 2
+		$PowerUpScreen/StartNextWave/CoinText.text = "Coins: %d" % coins
+		
 	
 
-func buyHealth():
-	coins -= 15
-	%CoinText.text = "Coins: %d" % coins
-	
-func buySpeed():
-	coins -=15
-	%CoinText.text = "Coins: %d" % coins
-	
-func buyStrength():
-	coins -= 15
-	%CoinText.text = "Coins: %d" % coins
-	
-	
+
+func _on_add_strength_pressed() -> void:
+	if coins >= strengthCost:
+		%Player.strength *= 1.1
+		coins -= strengthCost
+		strengthCost *= 2
+		$PowerUpScreen/StartNextWave/CoinText.text = "Coins: %d" % coins
+
+
+func _on_add_speed_pressed() -> void:
+	if coins >= speedCost:
+		%Player.speed *= 1.01
+		coins -= speedCost
+		speedCost *= 2
+		$PowerUpScreen/StartNextWave/CoinText.text = "Coins: %d" % coins
+
+
+func _on_start_next_wave_pressed() -> void:
+	begin_wave() # Replace with function body.

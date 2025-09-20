@@ -4,10 +4,16 @@ extends CharacterBody2D
 
 signal health_depleted
 var health = 100.0
+var maxHealth = 100.0
+var speed = 1.0
+var strength = 10.0
 
+
+	  # give the bullet a reference to the player
+	
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	velocity = direction * 600
+	velocity = direction * 600 * speed
 	move_and_slide()
 	
 	if velocity.length() > 0.0:
@@ -23,6 +29,11 @@ func _physics_process(delta: float) -> void:
 		
 		if health <= 0.0:
 			health_depleted.emit()
-			
+
+func get_damage() -> float:
+	return strength
+	
+func set_maxHealth():
+	%ProgressBar.max_value = maxHealth
 	
 		

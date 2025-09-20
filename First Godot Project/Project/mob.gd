@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var health = 2
+var health = 100
 var dir = 1
 var isKnockback = false
 var knockbackTime = .5
@@ -31,12 +31,12 @@ func _physics_process(delta: float) -> void:
 func _ready(): 
 	%Slime.play_walk()
 	
-func take_damage():
-	health -= 1
+func take_damage(strength):
+	health -= strength
 	%Slime.play_hurt()
 	
 	
-	if health == 0:
+	if health <= 0:
 		emit_signal("dead")
 		remove_from_group("enemies")
 		queue_free()
