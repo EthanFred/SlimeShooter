@@ -1,10 +1,12 @@
+TileMapLayer
+Node2D
+Label
+Button
+ColorRect
+CanvasLayer
 CollisionShape2D
 Area2D
 Sprite2D
-Button
-Label
 TextEdit
 VBoxContainer
 Control
-ColorRect
-CanvasLayer

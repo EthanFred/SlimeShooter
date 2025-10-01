@@ -8,6 +8,7 @@ var enemiesDied = 0
 var strengthCost = 1.0
 var speedCost = 1.0
 var healthCost = 1.0
+var coinsToEnterCave = 25;
 
 
 func spawn_mob():
@@ -91,3 +92,28 @@ func _on_add_speed_pressed() -> void:
 
 func _on_start_next_wave_pressed() -> void:
 	begin_wave() # Replace with function body.
+
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body == %Player:
+		%CaveEntrance.visible = true;
+		get_tree().paused = true;
+		$CaveEntrance/ColorRect/CoinText.text = "Coins: %d" % %Player.coins
+		$CaveEntrance/ColorRect/CoinsLeftText.text = "COINS TO ENTER CAVE: %d" % coinsToEnterCave
+
+
+func _on_insert_coins_pressed() -> void:
+	if %Player.coins > 0:
+		%Player.coins -= 1
+		coinsToEnterCave -= 1
+	$CaveEntrance/ColorRect/CoinText.text = "Coins: %d" % %Player.coins
+	$CaveEntrance/ColorRect/CoinsLeftText.text = "COINS TO ENTER CAVE: %d" % coinsToEnterCave # Replace with function body.
+
+	if coinsToEnterCave <= 0:
+		%CaveEntrance.visible = false;
+		%YouWin.visible = true;
+
+func _on_close_pressed() -> void:
+	%CaveEntrance.visible = false;
+	get_tree().paused = false;

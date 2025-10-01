@@ -1,6 +1,9 @@
 res://SurvivorScene.tscn
 res://bullet.gd
+res://Forest.tres
 res://coin.tscn
 res://Bullet.tscn
 res://player.tscn
 res://mob.tscn
+res://survivor_scene.gd
+res://player.gd

@@ -7,7 +7,7 @@ var health = 100.0
 var maxHealth = 100.0
 var speed = 1.0
 var strength = 10.0
-var coins = 10;
+var coins = 24
 
 
 func _ready():
