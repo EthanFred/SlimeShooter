@@ -436,7 +436,7 @@ text = "Start Next Wave"
 [node name="Player" parent="." instance=ExtResource("1_86hab")]
 unique_name_in_owner = true
 z_index = 11
-position = Vector2(926, 905)
+position = Vector2(4000, 905)
 
 [node name="Path2D" type="Path2D" parent="Player"]
 position = Vector2(-926, -905)
@@ -483,7 +483,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Forest" type="TileMapLayer" parent="."]
-scale = Vector2(5.35, 5.35)
+scale = Vector2(6.96, 6.96)
 tile_set = ExtResource("4_e24ar")
 
 [node name="Ocean" type="TileMapLayer" parent="Forest"]
@@ -564,7 +564,7 @@ vertical_alignment = 1
 [node name="CaveEntraceTrigger" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CaveEntraceTrigger"]
-position = Vector2(3246, 543)
+position = Vector2(4227, 738)
 scale = Vector2(14.64, 14.64)
 shape = SubResource("CircleShape2D_e24ar")
 

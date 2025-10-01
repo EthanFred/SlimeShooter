@@ -1,20 +1,21 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1759265102
-bullet.gd::GDScript::8311196553934119245::1759195288::0::1::::<>Area2D<><>0<>0<><>::
-Bullet.tscn::PackedScene/PackedScene::6933056846866826184::1758340351::0::1::::<><><>0<>0<><>::uid://dqoagtcgpc4mb::::res://bullet.gd<>uid://dftkbqwsfd68r::::res://pistol/projectile.png
+::res://::1759292335
+bullet.gd::GDScript::8311196553934119245::1759279693::0::1::::<>Area2D<><>0<>0<><>::
+Bullet.tscn::PackedScene::6933056846866826184::1759291809::0::1::::<><><>0<>0<><>::uid://dqoagtcgpc4mb::::res://bullet.gd<>uid://dftkbqwsfd68r::::res://pistol/projectile.png
 coin.gd::GDScript/GDScript::3760577502797607936::1758339820::0::1::::<>Area2D<><>0<>0<><>::
-coin.tscn::PackedScene/PackedScene::656482534077476536::1758340351::0::1::::<><><>0<>0<><>::uid://bttwfrk8aadcq::::res://coin.gd<>uid://dy518qaj0xham::::res://dollar.png
+coin.tscn::PackedScene::656482534077476536::1759291809::0::1::::<><><>0<>0<><>::uid://bttwfrk8aadcq::::res://coin.gd<>uid://dy518qaj0xham::::res://dollar.png
 default_bus_layout.tres::AudioBusLayout/AudioBusLayout::6564268947468103023::1758326278::0::1::::<><><>0<>0<><>::
 dollar.png::CompressedTexture2D/CompressedTexture2D::8907364044841504912::1758338381::1758338657::1::::<><><>0<>0<>b9a61ca8abe04af0e62975d4c3ef48c1<>res://.godot/imported/dollar.png-ba7cd86c8fa9314b2c974996dd0ecb36.ctex::
+Forest.tres::TileSet::6643514428752138107::1759291429::0::1::::<><><>0<>0<><>::uid://guvuj2uh5ywg::::res://fantasy_ [version 2.0]/forest_/forest_.png
 gun.gd::GDScript/GDScript::5788869220246618147::1758336221::0::1::::<>Area2D<><>0<>0<><>::
 gun.tscn::PackedScene/PackedScene::8048127557522101983::1758338105::0::1::::<><><>0<>0<><>::uid://coqf3h23skx52::::res://gun.gd<>uid://cswb5do8rrj7q::::res://pistol/pistol.png
 icon.png::CompressedTexture2D/CompressedTexture2D::621515402784007901::1758326278::1758326350::1::::<><><>0<>0<>130257868ffab54ab02a8c8a0dce8413<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
 mob.gd::GDScript/GDScript::5014435008975151061::1758339581::0::1::::<>CharacterBody2D<><>0<>0<><>::
-mob.tscn::PackedScene/PackedScene::7545834026445803854::1758340351::0::1::::<><><>0<>0<><>::uid://ogik4s70pgwl::::res://characters/slime/slime.tscn<>uid://cdpban335vfbx::::res://mob.gd
-player.gd::GDScript/GDScript::7816206746569470266::1758339794::0::1::::Player<>CharacterBody2D<><>0<>0<><>::
-player.tscn::PackedScene/PackedScene::5206239746700712956::1758340351::0::1::::<><><>0<>0<><>::uid://pbmyh1qru7p::::res://characters/happy_boo/happy_boo.tscn<>uid://djmh1vlc0t8ao::::res://player.gd<>uid://dmwtqqxqa0avn::::res://gun.tscn
-SurvivorScene.tscn::PackedScene::1825403648852919416::1759208562::0::1::::<><><>0<>0<><>::uid://cgf7ajh6lm83q::::res://player.tscn<>uid://buh53vkrtg7qo::::res://survivor_scene.gd<>uid://m7xdvpd5un70::::res://tree.tscn<>uid://guvuj2uh5ywg::::res://fantasy_ [version 2.0]/forest_/forest_.png
-survivor_scene.gd::GDScript/GDScript::3806520831980961326::1758339181::0::1::::<>Node2D<><>0<>0<><>::
+mob.tscn::PackedScene::7545834026445803854::1759291809::0::1::::<><><>0<>0<><>::uid://ogik4s70pgwl::::res://characters/slime/slime.tscn<>uid://cdpban335vfbx::::res://mob.gd
+player.gd::GDScript::7816206746569470266::1759291486::0::1::::Player<>CharacterBody2D<><>0<>0<><>::
+player.tscn::PackedScene::5206239746700712956::1759291809::0::1::::<><><>0<>0<><>::uid://pbmyh1qru7p::::res://characters/happy_boo/happy_boo.tscn<>uid://djmh1vlc0t8ao::::res://player.gd<>uid://dmwtqqxqa0avn::::res://gun.tscn
+SurvivorScene.tscn::PackedScene::1825403648852919416::1759291809::0::1::::<><><>0<>0<><>::uid://cgf7ajh6lm83q::::res://player.tscn<>uid://buh53vkrtg7qo::::res://survivor_scene.gd<>uid://m7xdvpd5un70::::res://tree.tscn<>uid://c1wfyhc6gqu8j::::res://Forest.tres<>uid://keby4wwlrk1n::::res://fantasy_ [version 2.0]/forest_/forest_ [fencesAndWalls].png<>uid://w8kfv3ioulok::::res://fantasy_ [version 2.0]/forest_/forest_ [fountain].png<>uid://8j8rbq4qsb4v::::res://fantasy_ [version 2.0]/forest_/forest_ [resources].png
+survivor_scene.gd::GDScript::3806520831980961326::1759291580::0::1::::<>Node2D<><>0<>0<><>::
 tree.tscn::PackedScene/PackedScene::909729186341262637::1758326278::0::1::::<><><>0<>0<><>::uid://b7rhtttevhxtj::::res://characters/ground_shadow.png<>uid://caqfk2xng5v5u::::res://trees/pine_tree.png
 ::res://addons/::1758326278
 ::res://addons/colorpicker_presets/::1758326278
